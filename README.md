@@ -23,26 +23,28 @@
     Entidad User : protected $hidden = ['password', 'remember_token']
     Entidad Post : protected $hidden = ['title', 'body']
 
-<pre>protected $hidden = [...]</pre>
+<pre>protected $appends = [...]</pre>
     Los atributos que se definen dentro, aparecen el las consultas previo
     método ACCESSOR (get{ATTRIBUTE}Attribute) definido 
 
     Entidad Post : protected $appends = ['post_uppername','post_excerpt']
      
-                    public function getPostUppernameAttribute () {
+                    public function getPostUppernameAttribute ()
+                    {
                         return strtolower($this->title);
                     }
-                    public function getPostExcerptAttribute () {
+                    public function getPostExcerptAttribute () 
+                    {
                         return substr($this->body,0,10).'...';
                     }
 
 <pre>
     {
-    "id": 1,
-    "created_at": "2021-01-26T17:52:35.000000Z",
-    "updated_at": "2021-01-26T17:52:35.000000Z",
-    "post_uppername": "omnis animi deleniti ipsa cumque quidem ut.",
-    "post_excerpt": "Eligendi q..."
+        "id": 1,
+        "created_at": "2021-01-26T17:52:35.000000Z",
+        "updated_at": "2021-01-26T17:52:35.000000Z",
+        "post_uppername": "omnis animi deleniti ipsa cumque quidem ut.",
+        "post_excerpt": "Eligendi q..."
     }
 </pre>
 
@@ -68,7 +70,7 @@
     {
         "número": 1,
         "título": "Omnis animi deleniti ipsa cumque quidem ut.",
-        "contenido": "Eligendi quaerat tempora voluptatem in occaecati. Fuga minus aut voluptates nobis est id. Delectus earum dicta nihil a ut. Atque quis possimus dolore dolor officiis cum est iure. Unde ut dolor incidunt blanditiis sint consequatur molestiae.",
+        "contenido": "Eligendi quaerat tempora voluptatem in occaecati..",
         "creado_hace": "9 hours ago",
         "fecha_creación": "26-01-2021",
         "fecha_actualización": "26-01-2021"
