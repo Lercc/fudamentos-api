@@ -46,4 +46,32 @@
     }
 </pre>
 
-        
+## RESOURCE : Formato de datos
+
+<pre>
+    php artisan make:resource PostResource
+</pre>
+
+<pre>
+    return [
+        'número'                => $this->id,
+        'título'                => $this->title,
+        'contenido'             => $this->body,
+        'creado_hace'           => $this->created_at->diffForHumans(), 
+        'fecha_creación'        => $this->created_at->format('d-m-Y'),
+        'fecha_actualización'   => $this->updated_at->format('d-m-Y'),
+    ];
+</pre>
+<pre>
+{
+    "data": 
+    {
+        "número": 1,
+        "título": "Omnis animi deleniti ipsa cumque quidem ut.",
+        "contenido": "Eligendi quaerat tempora voluptatem in occaecati. Fuga minus aut voluptates nobis est id. Delectus earum dicta nihil a ut. Atque quis possimus dolore dolor officiis cum est iure. Unde ut dolor incidunt blanditiis sint consequatur molestiae.",
+        "creado_hace": "9 hours ago",
+        "fecha_creación": "26-01-2021",
+        "fecha_actualización": "26-01-2021"
+    }
+}
+</pre>

@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    /*
+     
     // $hidden
     protected $hidden = ['title' ,'body'];
 
@@ -21,4 +23,5 @@ class Post extends Model
     public function getPostExcerptAttribute () {
         return substr($this->body,0,10).'...';
     }
+    */
 }
