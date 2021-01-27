@@ -17,6 +17,7 @@
 ## PROTECTED $HIDEEN - $APPENDS
 
 <pre>protected $hidden = [...]</pre>
+
     Los atributos que se defiden dentro, no retornan en las consultas
     que se realiza.
 
