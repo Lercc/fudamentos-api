@@ -87,3 +87,11 @@
 <pre>
     php artisan make:resource PostCollection
 </pre>
+
+## ERRORES HTTP
+
+    1XX :   Informativos
+    2XX :   Respuesta exitosa
+    3XX :   Redirección
+    4XX :   Erroes del cliemte
+    5xx :   Errores del servidor
