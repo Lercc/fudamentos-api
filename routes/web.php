@@ -1,11 +1,10 @@
 <?php
 
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return redirect('home');
-});
+Route::get('/', [PageController::class, 'index']);
 
 // API INTERNO O API LOCAL
 Route::group(['prefix' => 'api'], function () {
@@ -14,4 +13,4 @@ Route::group(['prefix' => 'api'], function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\Aplication\HomeController::class, 'index'])->name('home');
