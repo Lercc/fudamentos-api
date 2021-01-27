@@ -4,8 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\PostResource;
+use App\Http\Requests\PostRequest;
 use App\Models\Post;
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -22,12 +23,14 @@ class PostController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PostRequest $request)
     {
-        //
+        $post = Post::create($request->validated());
+
+        return response()->json(new PostResource($post), 201);
     }
 
     /**
@@ -38,19 +41,21 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-      return new PostResource($post);
+      return response()->json(new PostResource($post));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\PostRequest  $request
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(PostRequest $request, Post $post)
     {
-        //
+        $post->update($request->validated());
+
+        return response()->json(new PostResource($post));
     }
 
     /**
@@ -61,6 +66,6 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        return response()->json(null, 204);
     }
 }
