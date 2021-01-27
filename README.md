@@ -50,6 +50,8 @@
 
 ## RESOURCE : Formato de datos
 
+    Extiende JsonResource
+
 <pre>
     php artisan make:resource PostResource
 </pre>
@@ -76,4 +78,12 @@
         "fecha_actualización": "26-01-2021"
     }
 }
+</pre>
+
+## RESOURCE-COLLECTIONS : formatado de datos para varios registros
+
+    Hereda el formato de datos del PostResource
+    Extiende ResourceCollection
+<pre>
+    php artisan make:resource PostCollection
 </pre>
